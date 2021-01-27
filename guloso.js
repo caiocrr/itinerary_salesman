@@ -212,14 +212,11 @@ const selectNextMove = (current, candidates, start, totalCost) => {
     return [bestCandidate, cost];
 }
 
-function findBestRoute(start, goal) {
-    // algoritmo guloso
-    // acha o melhor proximo passo baseado no custo do trajeto + custo do vertice + caminho de volta pra casa
-    // se nao tiver mais tempo, volta pra casa
-    // fazer estilo dijkstra
-    // começa com o inicial
-    // pra cada vizinho, calcula o atual menor custo conehcido e seu ultimo vertice
-
+// algoritmo guloso:
+// acha o melhor proximo passo baseado no custo do trajeto + custo do vertice + caminho de volta pra casa
+// se nao tiver mais tempo, volta pra casa
+// dijkstra ou a* não se aplica pq temos um grafo completo: nunca um caminho alternativo vai ser mais rapido que o direto
+function findBestRoute(start) {
 
     let current = start;
     const visited = [start]
